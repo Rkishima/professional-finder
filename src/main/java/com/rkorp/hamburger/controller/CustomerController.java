@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class CustomerController {
 
     @Autowired
@@ -30,7 +30,7 @@ public class CustomerController {
 
     @GetMapping("/customer/{id}")
     public ResponseEntity<Customer> getCustomerById(@PathVariable(value = "id") Long customerId) throws ResourceNotFoundException {
-        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id :: " + customerId));
+        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id = " + customerId));
         return ResponseEntity.ok().body(customer);
     }
 
@@ -42,7 +42,7 @@ public class CustomerController {
     @PutMapping("/customer/{id}")
     public ResponseEntity<Customer> updateCustomer(@PathVariable(value = "id") Long customerId, @Valid @RequestBody Customer customerDetails) throws ResourceNotFoundException {
 
-        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id :: " + customerId));
+        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id = " + customerId));
 
         customer.setName(customerDetails.getName());
         customer.setAge(customerDetails.getAge());
@@ -55,7 +55,7 @@ public class CustomerController {
 
     @DeleteMapping("/customer/{id}")
     public Map<String, Boolean> deleteCustomer(@PathVariable(value = "id") Long customerId) throws ResourceNotFoundException {
-        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id :: " + customerId));
+        Customer customer = customerRepository.findById(customerId).orElseThrow(() -> new ResourceNotFoundException("Customer not found for this id = " + customerId));
 
         customerRepository.delete(customer);
         Map<String, Boolean> response = new HashMap<>();
