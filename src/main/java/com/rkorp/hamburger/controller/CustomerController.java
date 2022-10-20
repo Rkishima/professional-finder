@@ -6,6 +6,7 @@ import com.rkorp.hamburger.repository.CustomerRepository;
 import com.rkorp.hamburger.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api")
+@Validated
 public class CustomerController {
 
     @Autowired
