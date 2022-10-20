@@ -35,8 +35,8 @@ public class CustomerController {
     }
 
     @PostMapping("/customer")
-    public Customer createCustomer(@Valid @RequestBody Customer customer) {
-        return customerRepository.save(customer);
+    public Customer createCustomer(@Valid @RequestBody Customer customer) throws ResourceNotFoundException {
+        return customerService.saveCustomer(customer);
     }
 
     @PutMapping("/customer/{id}")
