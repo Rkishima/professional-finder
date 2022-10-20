@@ -6,6 +6,7 @@ import com.rkorp.hamburger.repository.CustomerRepository;
 import com.rkorp.hamburger.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class CustomerServiceImpl implements CustomerService {
     private CustomerRepository customerRepository;
 
     @Override
+    @Transactional
     public Customer saveCustomer(Customer customer) throws ResourceNotFoundException {
         boolean existCpf = customerRepository.findByCpf(customer.getCpf()).stream().anyMatch(existCustomer -> !existCustomer.equals(customer));
         boolean existEmail = customerRepository.findByEmail(customer.getEmail()).stream().anyMatch(existCustomer -> !existCustomer.equals(customer));
