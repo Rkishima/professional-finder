@@ -1,10 +1,8 @@
-package com.rkorp.hamburger.repository;
+package com.rkorp.hamburger.domain.repository;
 
-import com.rkorp.hamburger.model.Customer;
+import com.rkorp.hamburger.domain.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 
-import java.util.List;
 import java.util.Optional;
 
 public interface CustomerRepository  extends JpaRepository<Customer, Long> {

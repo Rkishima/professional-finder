@@ -1,4 +1,4 @@
-package com.rkorp.hamburger.model;
+package com.rkorp.hamburger.domain.model;
 
 import lombok.Data;
 
