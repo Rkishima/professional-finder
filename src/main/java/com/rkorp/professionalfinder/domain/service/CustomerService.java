@@ -1,8 +1,8 @@
-package com.rkorp.hamburger.domain.service;
+package com.rkorp.professionalfinder.domain.service;
 
-import com.rkorp.hamburger.domain.exception.BusinessException;
-import com.rkorp.hamburger.domain.model.Customer;
-import com.rkorp.hamburger.domain.repository.CustomerRepository;
+import com.rkorp.professionalfinder.domain.exception.BusinessException;
+import com.rkorp.professionalfinder.domain.model.Customer;
+import com.rkorp.professionalfinder.domain.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,8 +15,8 @@ public class CustomerService {
 
     @Transactional
     public Customer saveCustomer(Customer customer){
-        boolean emailInUse = customerRepository.findByEmail(customer.getEmail()).stream().anyMatch(existingCustomer -> !existingCustomer.equals(customer));
-        boolean cpfinUse = customerRepository.findByCpf(customer.getCpf()).stream().anyMatch(existingCustomer -> !existingCustomer.equals(customer));
+        boolean emailInUse = customerRepository.findByEmail(customer.getEmail()).stream().anyMatch(existingCustomer -> existingCustomer.equals(customer));
+        boolean cpfinUse = customerRepository.findByCpf(customer.getCpf()).stream().anyMatch(existingCustomer -> existingCustomer.equals(customer));
         if (emailInUse){
             throw new BusinessException("Já existe um cliente com este e-email.");
         } else if (cpfinUse){
@@ -24,4 +24,5 @@ public class CustomerService {
         }
         return customerRepository.save(customer);
     }
+
 }

@@ -1,6 +1,6 @@
-package com.rkorp.hamburger.domain.repository;
+package com.rkorp.professionalfinder.domain.repository;
 
-import com.rkorp.hamburger.domain.model.Customer;
+import com.rkorp.professionalfinder.domain.model.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

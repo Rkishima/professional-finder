@@ -1,8 +1,8 @@
-package com.rkorp.hamburger.api.controller;
+package com.rkorp.professionalfinder.api.controller;
 
-import com.rkorp.hamburger.domain.model.Customer;
-import com.rkorp.hamburger.domain.repository.CustomerRepository;
-import com.rkorp.hamburger.domain.service.CustomerService;
+import com.rkorp.professionalfinder.domain.model.Customer;
+import com.rkorp.professionalfinder.domain.repository.CustomerRepository;
+import com.rkorp.professionalfinder.domain.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

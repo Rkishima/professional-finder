@@ -1,10 +1,10 @@
-package com.rkorp.hamburger;
+package com.rkorp.professionalfinder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HamburgerApplicationTests {
+class PFinderApplicationTests {
 
 	@Test
 	void contextLoads() {

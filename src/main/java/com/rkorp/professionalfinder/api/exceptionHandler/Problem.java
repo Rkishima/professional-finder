@@ -1,4 +1,4 @@
-package com.rkorp.hamburger.api.exceptionHandler;
+package com.rkorp.professionalfinder.api.exceptionHandler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;

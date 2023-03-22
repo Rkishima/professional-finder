@@ -1,6 +1,6 @@
-package com.rkorp.hamburger.api.exceptionHandler;
+package com.rkorp.professionalfinder.api.exceptionHandler;
 
-import com.rkorp.hamburger.domain.exception.BusinessException;
+import com.rkorp.professionalfinder.domain.exception.BusinessException;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
-import java.io.Serial;
-import java.time.LocalDateTime;
 import java.time.OffsetDateTime;
 
 @ControllerAdvice
