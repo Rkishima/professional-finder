@@ -1,4 +1,4 @@
-package com.rkorp.hamburger.model;
+package com.rkorp.professionalfinder.domain.model;
 
 import lombok.Data;
 
@@ -6,6 +6,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.List;
 
 @Data
 @Table(name = "customer")
@@ -30,6 +31,12 @@ public class Customer {
 
     @NotBlank
     private String phone;
+
+//    @NotBlank
+//    private String job;
+//
+//    @NotBlank
+//    private List<Address> address;
 }
 
 
